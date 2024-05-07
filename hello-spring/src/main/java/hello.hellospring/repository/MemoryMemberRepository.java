@@ -30,6 +30,10 @@ public class MemoryMemberRepository implements MemberReopsitory { // interface �
 
     @Override
     public List<Member> findAll() {
-        return new ArrayList<>(store.values()); // store에 있는 모든 값들(member들)을 arrayList로 반환함 
+        return new ArrayList<>(store.values()); // store에 있는 모든 값들(member들)을 arrayList로 반환함
+    }
+
+    public void clearStore() { // store를 싹 비워주는 메소드
+        store.clear();
     }
 }
