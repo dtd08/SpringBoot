@@ -1,6 +1,6 @@
 package hello.hellospring.domain;
 
-public class Member {
+public class Member { // 회원의 정보를 담은 구현체
     private Long id; // 데이터 구분을 위해 시스템이 정하는 값
     private String name; // 회원 이름
 
