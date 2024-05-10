@@ -4,7 +4,7 @@ import hello.hellospring.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepository implements MemberReopsitory { // interface 구현체  // 실질적인 동작과 값이 구현됨
+public class MemoryMemberRepository implements MemberRepository { // interface 구현체  // 실질적인 동작과 값이 구현됨
 
     private static Map<Long, Member> store = new HashMap<>(); // id와 회원을 저장하는 map
     private static long sequence = 0L; // id를 만들어주는 sequence
