@@ -18,6 +18,7 @@ public class MemberService {
         return member.getId(); // (임의로 설정)아이디값 반환
     }
 
+    // 중복 확인 로직
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName()) // Optional로 반환되기 때문에 바로 ifPresent 같은 메소드를 쓸 수 있음
                 .ifPresent(m -> { // 만약 member에 값이 있으면 = null이 아니라 값이 있으면 예외처리
