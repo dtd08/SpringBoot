@@ -75,5 +75,4 @@ class MemberServiceTest {
     }
 }
 
-// 단축키 ctrl+shift+T 로 아주 간단하게 껍데기를 만들 수 있음
 // 테스트 코드는 빌드에 들어가지 않기 때문에 한글로 써도 상관없음
