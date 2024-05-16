@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf/org">
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>이름</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 본격적으로 tymleaf가 랜더링하는 구간 -->
+                <!-- 다만 메모리에 있기 때문에 서버를 끄면 모두 날아감 => 데이터를 데이터베이스에 저장해야 함 -->
+                <tr th:each="member: ${members}"> <!-- 루프 돌면서 로직 실행. 마치 자바의 for-each -->
+                    <td th:text="${members.id}"></td> <!-- model에서 값을 꺼내와서 랜더링함 -->
+                    <td th:text="${members.name}"></td> <!-- Java Property 접근 방식(getter로 가져옴) -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
