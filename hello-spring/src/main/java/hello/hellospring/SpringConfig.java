@@ -27,6 +27,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource); // (config를 제외한) 다른 코드를 건들지 않고도 구현체를 통해 인터페이스를 확장함
+//        return new JdbcMemberRepository(dataSource); // (config를 제외한) 다른 코드를 건들지 않고도 구현체를 통해 인터페이스를 확장함
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
