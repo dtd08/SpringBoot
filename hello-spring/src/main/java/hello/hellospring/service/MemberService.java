@@ -2,16 +2,21 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+//@Service // 이 어노테이션이 있어야지 스프링에서 자신이 생성해야 할 서비스인 것을 앎  // 한마디로 이 어노테이션이 있어야 스프링 빈으로 등록이 됨  // 하지만 config에서 설정했으므로 필요 없음
+@Transactional  // jpa를 위해선 트랜젝션이 있어야 함
 public class MemberService {
     // 회원 서비스 개발을 위한 회원 리포지토리 생성
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository; // Dependency Injection(DI) : 외부에서 리포지토리를 넣어줌
+        this.memberRepository = memberRepository; // Dependency Injection(DI) : 외부에서 리포지토리를 넣어줌 = 의존관계 주입
     }
 
     // 회원 가입
@@ -41,7 +46,8 @@ public class MemberService {
 }
 
 // 리포지토리의 이름들은 단순 저장/조회에 가깝다면
-// 서비스는 좀 더 비즈니스적인 용어들을 씀 (소통을 위해)
+// 서비스는 좀 더 비즈니스적인 용어들을 씀
+// 그래야 소통하기 쉬움
 
 // 한마디로 서비스는 보통 비즈니스에 의존적으로 설계하고
 // 리포지토리의 경우는 좀 더 단순한, 기계적인? 용어를 쓴다.
