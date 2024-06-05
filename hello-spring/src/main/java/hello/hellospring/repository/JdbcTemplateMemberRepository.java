@@ -49,7 +49,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         return jdbcTemplate.query("select * from member", memberRowMapper());
     }
 
-    private RowMapper<Member> memberRowMapper() {
+    private RowMapper<Member> memberRowMapper() { // Member 매핑
         return (rs, rowNum) -> { // lamda 스타일
             Member member = new Member();
             member.setId(rs.getLong("id"));
@@ -58,4 +58,3 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         };
     }
 }
-
