@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class TimeTraceAop {
 
     @Around("execution(* hello.hellospring..*(..))") // 공통 관심사항을 타겟팅함
-    // 패키지명(.하위 패키지명).클래스명(파라미터)
+    // 패키지명.(하위 패키지명).클래스명(파라미터)
     // 현재 코드로 따지자면 hello.hellospring 밑에 있는 요소에다가 모두 적용함 
 
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
